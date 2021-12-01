@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Digitalroot.Valheim.Build.Targets</PackageId>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<IsPublishable>False</IsPublishable>
+		<DebugType>none</DebugType>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+		<Copyright>Copyright © Digitalroot Technologies 2021 - 2022</Copyright>
+		<PackageProjectUrl>https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.Build.Targets</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.Build.Targets</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageIcon>ValheimRcon_black.png</PackageIcon>
+		<PackageIconUrl />
+		<PackageTags>valheim, digitalroot, build targets</PackageTags>
+		<Authors>Digitalroot</Authors>
+		<Company>Digitalroot Technologies</Company>
+		<Product>Digitalroot Valheim Build Targets</Product>
+		<Description>Build Targets</Description>
+		<PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+		<NeutralLanguage>en-US</NeutralLanguage>
+    <VersionPrefix>1.0.5</VersionPrefix>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\ico\ValheimRcon_black.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="build\Digitalroot.Valheim.Build.Targets.props">
+			<Pack>True</Pack>
+			<PackagePath>build</PackagePath>
+		</None>
+		<None Include="libs\netstandard2.0\_._">
+			<Pack>True</Pack>
+			<PackagePath>libs\netstandard2.0</PackagePath>
+		</None>
+	</ItemGroup>
+</Project>
