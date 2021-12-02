@@ -23,6 +23,7 @@
 		<PackageReleaseNotes>Initial Release</PackageReleaseNotes>
 		<NeutralLanguage>en-US</NeutralLanguage>
     <VersionPrefix>1.0.5</VersionPrefix>
+		<MinClientVersion >5.11.0</MinClientVersion>
 	</PropertyGroup>
 
 	<ItemGroup>

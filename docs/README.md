@@ -1,3 +1,4 @@
+[![Release](https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.Build.Targets/actions/workflows/release.yml/badge.svg)](https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.Build.Targets/actions/workflows/release.yml)
 
 ###### Support Me @ https://www.buymeacoffee.com/digitalroot
 
