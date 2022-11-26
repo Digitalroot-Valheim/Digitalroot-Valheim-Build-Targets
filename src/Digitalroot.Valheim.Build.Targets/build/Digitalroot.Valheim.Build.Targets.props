@@ -20,6 +20,7 @@
       <DigitalrootTSIOFiles Include="$(ProjectDir).ts\*.*" />
       <DigitalrootReadMeFile Include="$(SolutionDir)..\docs\README.md" />
       <DigitalrootLicenseFile Include="$(SolutionDir)..\LICENSE" />
+      <DigitalrootOutputFile Include="$(TargetDir)$(ProjectName).dll" />
     </ItemGroup>
   </Target>
 
@@ -29,8 +30,8 @@
     <Message Text="PostBuild (Debug) Called" Importance="high" />
     <Message Text="Copying assemblies to C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\$(ProjectName)\" Importance="high" />
     <CallTarget Targets="RefreshVars" />
-    <Copy SourceFiles="@(DigitalrootBuildFiles)" DestinationFiles="@(DigitalrootBuildFiles->'C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
-    <Message Text="DigitalrootBuildFiles = @(DigitalrootBuildFiles)" Importance="high" />
+    <Message Text="DigitalrootOutputFile = @(DigitalrootOutputFile)" Importance="high" />
+    <Copy SourceFiles="@(DigitalrootOutputFile)" DestinationFiles="@(DigitalrootOutputFile->'C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <Message Text="+--------------------------------------------------------------+" Importance="high" />
   </Target>
 
