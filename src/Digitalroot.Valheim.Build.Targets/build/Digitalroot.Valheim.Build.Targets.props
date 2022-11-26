@@ -43,8 +43,8 @@
     <MakeDir Directories="$(TargetDir)..\$(ProjectName)\$(ProjectName)" />
     <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)" Importance="high" />
     <Delete Files="$(TargetDir)..\$(ProjectName)\**\*.*" />
-    <Message Text="Copying @(DigitalrootSourceFiles) to $(TargetDir)..\$(ProjectName)\$(ProjectName)" Importance="high" />
-    <Copy SourceFiles="@(DigitalrootSourceFiles)" DestinationFiles="@(DigitalrootSourceFiles->'$(TargetDir)..\$(ProjectName)\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Message Text="Copying @(DigitalrootOutputFile) to $(TargetDir)..\$(ProjectName)\$(ProjectName)" Importance="high" />
+    <Copy SourceFiles="@(DigitalrootOutputFile)" DestinationFiles="@(DigitalrootOutputFile->'$(TargetDir)..\$(ProjectName)\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="@(DigitalrootLicenseFile)" DestinationFiles="@(DigitalrootLicenseFile->'$(TargetDir)..\$(ProjectName)\$(ProjectName)\%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
     <GetAssemblyIdentity AssemblyFiles="$(TargetDir)$(TargetFileName)">
       <Output TaskParameter="Assemblies" ItemName="DigitalrootAssemblyIdentities" />
@@ -64,8 +64,8 @@
     <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)TS" Importance="high" />
     <Delete Files="$(TargetDir)..\$(ProjectName)TS\**\*.*" />
     <MakeDir Directories="$(TargetDir)..\$(ProjectName)TS\plugins" />
-    <Message Text="Copying @(DigitalrootSourceFiles) to $(TargetDir)..\$(ProjectName)TS\plugins" Importance="high" />
-    <Copy SourceFiles="@(DigitalrootSourceFiles)" DestinationFiles="@(DigitalrootSourceFiles->'$(TargetDir)..\$(ProjectName)TS\plugins\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Message Text="Copying @(DigitalrootOutputFile) to $(TargetDir)..\$(ProjectName)TS\plugins" Importance="high" />
+    <Copy SourceFiles="@(DigitalrootOutputFile)" DestinationFiles="@(DigitalrootOutputFile->'$(TargetDir)..\$(ProjectName)TS\plugins\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
     <Message Text="Copying @(DigitalrootTSIOFiles) to $(TargetDir)..\$(ProjectName)TS" Importance="high" />
     <Copy SourceFiles="@(DigitalrootTSIOFiles)" DestinationFiles="@(DigitalrootTSIOFiles->'$(TargetDir)..\$(ProjectName)TS\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="@(DigitalrootReadMeFile)" DestinationFiles="@(DigitalrootReadMeFile->'$(TargetDir)..\$(ProjectName)TS\%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
