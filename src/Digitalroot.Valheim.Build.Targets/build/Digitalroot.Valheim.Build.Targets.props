@@ -1,6 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- PreBuild -->
   <Target Name="PreBuild Release" Condition="'$(Configuration)' == 'Release'" BeforeTargets="PreBuildEvent">
+    <Message Text="*--------------------------------------------------------------*" Importance="high" />
     <Message Text="PreBuild Called" Importance="high" />
     <ItemGroup>
       <BuildFiles Include="$(TargetDir)..\$(ProjectName)\$(ProjectName)\$(ProjectName).dll" />
@@ -8,6 +9,7 @@
     <Message Text="@(BuildFiles)" Importance="high" />
     <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)\$(ProjectName)" Importance="high" />
     <Delete Files="@(BuildFiles)" />
+    <Message Text="*--------------------------------------------------------------*" Importance="high" />
   </Target>
 
   <Target Name="RefreshVars" AfterTargets="PostBuildEvent" Label="MyRefreshVars">
@@ -23,14 +25,18 @@
 
   <!-- PostBuild Debug (Debug) -->
   <Target Name="DebugPostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Debug'" DependsOnTargets="RefreshVars">
+    <Message Text="+--------------------------------------------------------------+" Importance="high" />
     <Message Text="PostBuild (Debug) Called" Importance="high" />
     <Message Text="Copying assemblies to C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\$(ProjectName)\" Importance="high" />
     <CallTarget Targets="RefreshVars" />
     <Copy SourceFiles="@(DigitalrootSourceFiles)" DestinationFiles="@(DigitalrootSourceFiles->'C:\Program Files (x86)\Steam\steamapps\common\Valheim\BepInEx\plugins\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
+    <Message Text="DigitalrootBuildFiles = @(DigitalrootBuildFiles)" Importance="high" />
+    <Message Text="+--------------------------------------------------------------+" Importance="high" />
   </Target>
 
   <!-- PostBuild (Release) -->
   <Target Name="ReleasePostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Release'" DependsOnTargets="RefreshVars">
+    <Message Text="#--------------------------------------------------------------#" Importance="high" />
     <Message Text="PostBuild (Release) Called" Importance="high" />
     <CallTarget Targets="RefreshVars" />
     <MakeDir Directories="$(TargetDir)..\$(ProjectName)\$(ProjectName)" />
@@ -47,10 +53,12 @@
     <Delete Files="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" />
     <Message Text="Creating Zip file $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" Importance="high" />
     <ZipDirectory SourceDirectory="$(TargetDir)..\$(ProjectName)" DestinationFile="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" />
+    <Message Text="#--------------------------------------------------------------#" Importance="high" />
   </Target>
 
   <!-- PostBuild (Release) TS -->
   <Target Name="ReleasePostBuildTS" AfterTargets="ReleasePostBuild" Condition="'$(Configuration)' == 'Release' And Exists('$(ProjectDir).ts')" DependsOnTargets="RefreshVars">
+    <Message Text="$--------------------------------------------------------------$" Importance="high" />
     <Message Text="PostBuild (Release) TS Called" Importance="high" />
     <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)TS" Importance="high" />
     <Delete Files="$(TargetDir)..\$(ProjectName)TS\**\*.*" />
@@ -75,6 +83,7 @@
     <WriteLinesToFile File="$(OutputFile)" Lines="$([System.IO.File]::ReadAllText($(InputFile)).Replace('%VERSION_NUMBER%','$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3))'))" Overwrite="true" Encoding="ASCII" />
     <Message Text="Creating Zip file $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" Importance="high" />
     <ZipDirectory SourceDirectory="$(TargetDir)..\$(ProjectName)TS" DestinationFile="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" />
+    <Message Text="$--------------------------------------------------------------$" Importance="high" />
   </Target>
 
 </Project>

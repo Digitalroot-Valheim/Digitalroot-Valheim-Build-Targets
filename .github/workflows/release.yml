@@ -22,6 +22,5 @@ jobs:
     with:
       sln-file-name: Digitalroot.Valheim.Build.Targets
       proj-file-name: Digitalroot.Valheim.Build.Targets
-      skip-unit-tests: true
       nuget-gh-upload: true
       nuget-s3-upload: true

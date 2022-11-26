@@ -23,7 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{8C225B52-9
 		..\docs\README.md = ..\docs\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digitalroot.Valheim.Build.Targets", "Digitalroot.Valheim.Build.Targets\Digitalroot.Valheim.Build.Targets.csproj", "{14B6E742-2FC8-4103-A716-18746807EA94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digitalroot.Valheim.Build.Targets", "Digitalroot.Valheim.Build.Targets\Digitalroot.Valheim.Build.Targets.csproj", "{14B6E742-2FC8-4103-A716-18746807EA94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{3EF4BD40-C111-48B7-A246-16C7C4210A88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{14B6E742-2FC8-4103-A716-18746807EA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14B6E742-2FC8-4103-A716-18746807EA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14B6E742-2FC8-4103-A716-18746807EA94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF4BD40-C111-48B7-A246-16C7C4210A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF4BD40-C111-48B7-A246-16C7C4210A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF4BD40-C111-48B7-A246-16C7C4210A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF4BD40-C111-48B7-A246-16C7C4210A88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,14 +2,14 @@
 
 	<PropertyGroup>
 		<PackageId>Digitalroot.Valheim.Build.Targets</PackageId>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
 		<IsPublishable>False</IsPublishable>
 		<DebugType>none</DebugType>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
-		<Copyright>Copyright © Digitalroot Technologies 2021 - 2022</Copyright>
+		<Copyright>Copyright © Digitalroot Technologies 2021 - 2023</Copyright>
 		<PackageProjectUrl>https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.Build.Targets</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.Build.Targets</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
@@ -22,8 +22,8 @@
 		<Description>Build Targets</Description>
 		<PackageReleaseNotes>Initial Release</PackageReleaseNotes>
 		<NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>1.0.5</VersionPrefix>
-		<MinClientVersion >5.11.0</MinClientVersion>
+    <VersionPrefix>1.0.7</VersionPrefix>
+		<MinClientVersion>5.11.0</MinClientVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -39,5 +39,9 @@
 			<Pack>True</Pack>
 			<PackagePath>libs\netstandard2.0</PackagePath>
 		</None>
+    <None Include="libs\net462\_._">
+      <Pack>True</Pack>
+      <PackagePath>libs\net462</PackagePath>
+    </None>
 	</ItemGroup>
 </Project>
