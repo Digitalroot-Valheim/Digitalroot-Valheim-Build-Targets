@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<PackageId>Digitalroot.Valheim.Build.Targets</PackageId>
 		<TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
-		<IsPublishable>False</IsPublishable>
+		<IsPublishable>false</IsPublishable>
 		<DebugType>none</DebugType>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
@@ -22,7 +22,7 @@
 		<Description>Build Targets</Description>
 		<PackageReleaseNotes>Initial Release</PackageReleaseNotes>
 		<NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>1.0.14</VersionPrefix>
+    <VersionPrefix>1.0.20</VersionPrefix>
 		<MinClientVersion>5.11.0</MinClientVersion>
 	</PropertyGroup>
 
